@@ -2,7 +2,7 @@
 
 This repo contains complete pipeline for conducting EDA, building machine learning model for predicting property prices, and identifying how different features influence the model. I have utilized mean absolute percent error as the basis for model evaluation. 
 
-## EDA Insights:
+## High Level EDA Insights:
 - nearly half of year_built and leasures_available values are NULL
 - 5 Cateogrical Variable, 3 Integer Variable, 7 Float Variable
 - Correlation Analysis
@@ -16,7 +16,7 @@ based on results, I aim to reduce leasures_available unique values; I had achiev
 
 
 
-## My Regresstion Model (XGBoost):
+## My Regresstion Model:
 For null values, numerical variables are imputed with their median, while categorical are imputed with their mode, with the exception of "leasures_available", in which null values are replaced with 'none'. Categorical variables undergo ordinal encoding as part of the X_train dataset. The optimized model utilizes XGBoost algorithm with decision trees as the base trees and with best parameters obtained from grid search; learning rate of 0.1, max_depth of 7, n_estimators/number of ensembles of 200, and default max_nodes of 6. The MAPE of the model is 0.18. The feature importance are ranked as follows:
 1. parking_spots
 2. type
